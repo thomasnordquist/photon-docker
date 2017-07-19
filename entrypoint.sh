@@ -1,9 +1,13 @@
 #!/bin/bash
 
+
 # Download elasticsearch index
 if [ ! -d "/photon/photon_data/elasticsearch" ]; then
     echo "Downloading search index"
-    wget -O - http://download1.graphhopper.com/public/photon-db-latest.tar.bz2 | bzip2 -cd | tar x
+
+    # Let graphhopper know where the traffic is coming from
+    USER_AGENT="docker: thomasnordquist/photon-geocoder"
+    wget --user-agent="$USER_AGENT" -O - http://download1.graphhopper.com/public/photon-db-latest.tar.bz2 | bzip2 -cd | tar x
 fi
 
 # Start photon if elastic index exists
