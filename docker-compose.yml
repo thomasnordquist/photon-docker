@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: thomasnordquist/photon-geocoder:latest
+    image: jfelectron/geocoder
     volumes:
       - data:/photon/photon_data
     ports:
