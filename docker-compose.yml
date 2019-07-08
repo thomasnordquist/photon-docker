@@ -13,3 +13,7 @@ services:
 volumes:
   data:
     driver: local
+    
+networks:
+  default:
+    driver: host
