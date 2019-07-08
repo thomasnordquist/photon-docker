@@ -1,7 +1,8 @@
-version: '2'
+version: '3.4'
 services:
   photon:
     build:
+      network: host
       context: .
       dockerfile: Dockerfile
     image: jfelectron/geocoder
